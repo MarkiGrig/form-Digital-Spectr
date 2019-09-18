@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/form-style.css">
+</head>
+<body>
+
+
+    <div id="form-container">
+
+        <form class="form" id="question-form" method="POST" action="https://digital-spectr.com/ac/academy.php">
+
+            <div class="form__title">Задать вопрос</div>
+
+            <input class="form__input" name="name" placeholder="Фамилия Имя Отчество *"/>
+            <input class="form__input" name="phone" placeholder="Телефон *"/>
+            <input class="form__input" name="email" placeholder="Email"/>
+
+            <button type="submit" class="form__button" id="question-form__submit-button">ОТПРАВИТЬ ЗАПРОС</button>
+
+            <script src="script/event.js"></script>
+            <script src="script/onsubmit-validation.js"></script>
+        </form>
+
+    </div>
+
+
+</body>
+</html>

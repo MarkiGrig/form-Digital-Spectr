@@ -1,0 +1,200 @@
+div {
+    height: auto;
+    display: block;
+}
+
+input {
+    border-style: none;
+    display: block;
+    width: calc(401px - 15px - 8.76%);
+    resize: none;
+    outline: none;
+    overflow: hidden;
+}
+
+
+@-webkit-keyframes autofill {
+    to {
+        color: #7c7880;
+        background: #FFFFFF;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both !important;
+
+}
+
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #D0C9D6;
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #D0C9D6;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #D0C9D6;
+}
+
+button {
+    width: 401px;
+
+    border-style: none;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 22px;
+
+    display: block;
+    resize: none;
+    outline: none;
+    overflow: hidden;
+
+    color: #FFFFFF;
+}
+
+#form-container {
+    width: 481px;
+    margin-left: calc((100% - 481px)/2);
+    margin-right: calc((100% - 481px)/2);
+    margin-top: 4.04%;
+}
+
+.form {
+    width: 481px;
+    height: 392px;
+    background: #F7F5F9;
+    border-radius: 12px;
+
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.25);
+}
+
+.form__title {
+    width: auto;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-bottom: 25px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 20px;
+
+    display: flex;
+    align-items: center;
+
+    color: #3B3D43;
+}
+
+.form__input {
+    width: 351px;
+    height: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 25px;
+
+    padding: 14px 35px 14px 15px;
+
+    background: #FFFFFF;
+
+    box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07);
+    border-radius: 6px;
+
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    color: #7c7880;
+    line-height: 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+.form__button {
+    margin-left: 40px;
+    margin-right: 40px;
+    height: 48px;
+    cursor: pointer;
+
+    background: #6979F8;
+    border-radius: 6px;
+}
+
+
+@keyframes form__input__invalid-animation {
+    from {
+        box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(255, 0, 0, 0);
+        color: #7c7880;
+        background: #FFFFFF;
+    }
+    to {
+        box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(255, 0, 0, 0);
+        color: #7c7880;
+        background: #FFFFFF;
+    }
+    20%{
+        box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(255, 0, 0, 1);
+        color: #7c7880;
+        background: #FFFFFF;
+    }
+    50%{
+        box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07), 0 0 0 1px rgba(255, 0, 0, 1);
+        color: #7c7880;
+        background: #FFFFFF;
+    }
+}
+
+.form__input__invalid {
+    animation: form__input__invalid-animation 1s !important;
+}
+
+
+@keyframes form__input__onmouseover-animation {
+    from {
+        color: #7c7880;
+        background: #FFFFFF;
+    }
+    to {
+        box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07), 0 0 0 1px #854FC8;
+        color: #7c7880;
+        background: #FFFFFF;
+    }
+}
+
+.form__input__onmouseover {
+    animation: form__input__onmouseover-animation 0.01s !important;
+    box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07), 0 0 0 1px #854FC8;
+}
+
+
+.form__input__onfocus {
+    box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07), 0 0 0 1px #854FC8;
+}
+
+.form__button__onmouseover {
+    box-shadow: 0 0 0 1px #854FC8;
+}
+
+.form__input__invalidSymbol {
+    animation: form__input__invalid-animation 0.3s !important;
+}
