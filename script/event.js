@@ -1,5 +1,6 @@
 const inputElements = document.getElementsByClassName('form__input');
 const button = document.getElementById('question-form__submit-button');
+const eMailPattern = /^([a-z0-9_.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i;
 
 inputElements.indexOf = (element) => {
     for (let i = 0; i < inputElements.length; i++) {
@@ -28,12 +29,12 @@ const testInput = (element, regexp) => {
     return false;
 };
 
-const testResult = (element, pattern) => {
+const testPattern = (element, pattern, show = (element) => {}) => {
     const value = element.value;
     if (pattern.test(value)) {
         return true;
     } else {
-        element.classList.add('form__input__invalid');
+        show(element);
         return false;
     }
 };
@@ -76,7 +77,6 @@ for (let i = 0; i < inputElements.length; i++) {
 
         input.onblur = function() {
             this.classList.remove("form__input__onfocus");
-            this.patternValid = true; //no pattern
         };
 
     } else if (input.name === 'phone') {
@@ -87,7 +87,6 @@ for (let i = 0; i < inputElements.length; i++) {
 
         input.onblur = function() {
             this.classList.remove("form__input__onfocus");
-            this.patternValid = true; // no pattern
         };
 
     } else if (input.name === 'email') {
@@ -98,8 +97,14 @@ for (let i = 0; i < inputElements.length; i++) {
 
         input.onblur = function() {
             this.classList.remove("form__input__onfocus");
-            const pattern = /^([a-z0-9_.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i;
-            this.patternValid = testResult(input, pattern);
+
+            const show = (element) => {
+                if (element.value.length !== 0) {
+                    element.classList.add('form__input__invalid');
+                }
+            };
+            
+            testPattern(input, eMailPattern, show);
         };
 
     }
