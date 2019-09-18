@@ -9,7 +9,10 @@ const validate = () => {
         if (requiredInputs.includes(element.name) && element.value.length === 0) {
             element.classList.add('form__input__invalid');
             valid = false;
-        } else if (element.value.length !== 0 && !element.patternValid) {
+        } else if (element.value.length !== 0 &&
+            element.name === 'email' &&
+            !testPattern(element, eMailPattern)) {
+
             element.classList.add('form__input__invalid');
             valid = false;
         }
