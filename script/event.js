@@ -30,7 +30,12 @@ const testInput = (element, regexp) => {
 
 const testResult = (element, pattern) => {
     const value = element.value;
-    return pattern.test(value);
+    if (pattern.test(value)) {
+        return true;
+    } else {
+        element.classList.add('form__input__invalid');
+        return false;
+    }
 };
 
 /*INPUTS' EVENTS*/
